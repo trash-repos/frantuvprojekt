@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using CustomExtensions;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,6 +26,23 @@ namespace FrantovaPrvniAppka
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if(textBlock.Visibility == Visibility.Collapsed)
+            {
+                textBlock.Visibility =Visibility.Visible;
+            }
+            else
+            {
+                textBlock.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void textBox_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            textBlock1.Text = "Ahoj" + textBox.Text.Vocative();
         }
     }
 }
